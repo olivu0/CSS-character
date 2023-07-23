@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+body {
+  background-color: rgb(33, 34, 33);
+}
+
+.pentagram {
+  position: relative;
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  margin: 50px 0;
+  color: #ffd67a;
+  border-right: 80px solid transparent;
+  border-left: 80px solid transparent;
+  border-bottom: 56px solid #ffd67a;
+  transform: rotate(35deg);
+  animation: pentagram 6s linear infinite;
+}
+
+.pentagram::before,
+.pentagram::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  top: 0;
+  height: 0px;
+  color: #ffd67a;
+  left: -80px;
+  border-right: 80px solid transparent;
+  border-left: 80px solid transparent;
+  border-bottom: 56px solid #ffd67a;
+}
+
+.pentagram::before {
+  transform: rotate(71deg);
+}
+
+.pentagram::after {
+  transform: rotate(-71deg);
+}
+
+.pentagram.one {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+}
+
+.pentagram.three {
+  left: 90%;
+}
+
+.pentagram.four {
+  left: 10%;
+}
+
+.pentagram.five {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+}
+@keyframes pentagram {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* booeongi */
+
+.booOwl {
+  margin-top: 200px;
+  background-color: orange;
+  border-radius: 200px;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  transform: translate(-50%);
+  border: 10px solid #0d0d06;
+}
+
+.booOwl .ear {
+  background-color: chocolate;
+  border: 10px solid #0d0d06;
+}
+
+.ear {
+  width: 80px;
+  height: 60px;
+  display: inline-block;
+  position: absolute;
+}
+
+.ear::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 60px;
+  background-color: burlywood;
+}
+
+.ear.left {
+  position: absolute;
+  border-top-right-radius: 100%;
+  transform: rotate(-40deg);
+}
+
+.ear.left::before {
+  border-top-right-radius: 100%;
+}
+
+.ear.right {
+  position: absolute;
+  border-top-left-radius: 100%;
+  transform: rotate(40deg);
+  left: 80%;
+}
+
+.ear.right::before {
+  border-top-left-radius: 100%;
+  position: absolute;
+  left: 37%;
+}
+
+.face {
+  background-color: orange;
+  border-radius: 200px;
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+.face::before {
+  display: block;
+  content: "";
+  background-color: burlywood;
+  width: 300px;
+  height: 300px;
+  border-radius: 130px;
+  position: absolute;
+  bottom: -3%;
+  left: 18%;
+  border: 10px solid #0d0d06;
+}
+
+.face .eye {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: white;
+  border: 10px solid #0d0d06;
+}
+
+.face .eye.left {
+  position: absolute;
+  top: 80px;
+  right: 49%;
+}
+
+.face .eye.right {
+  position: absolute;
+  top: 80px;
+  left: 49%;
+}
+
+.eye::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(36, 30, 23);
+  border-radius: 50%;
+
+  position: relative;
+  left: 30px;
+  top: 30px;
+}
+
+.eye::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+
+  position: relative;
+  bottom: 100px;
+  left: 50px;
+
+  animation: eye-animation 2s ease infinite;
+}
+
+@keyframes eye-animation {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(15px, 15px) scale(1.2);
+  }
+}
+
+.face .nose {
+  position: absolute;
+  top: 45%;
+  left: 38%;
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  transform: rotate(45deg);
+  border: 10px solid #0d0d06;
+  border-radius: 30px 100px 0 100px;
+}
+
+/* wing */
+
+.face .wing {
+  width: 100px;
+  height: 100px;
+  background-color: paleturquoise;
+  border-radius: 30px 200px 0 200px;
+  border: 10px solid #0d0d06;
+}
+
+.wing::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(65, 105, 225, 0.717);
+  border-radius: 30px 200px 0 200px;
+  box-shadow: 0 0 5px 5px rgba(65, 105, 225, 0.717);
+}
+
+.face .wing.left {
+  position: absolute;
+  transform: rotate(90deg);
+  top: 50%;
+  transform-origin: 0 0;
+  animation: wing-left-animation 0.2s ease infinite;
+}
+
+.face .wing.right {
+  position: absolute;
+  transform-origin: 0 0;
+  top: 50%;
+  left: 100%;
+  animation: wing-right-animation 0.2s ease infinite;
+}
+
+@keyframes wing-left-animation {
+  0% {
+    transform: rotate(90deg);
+  }
+  20% {
+    transform: rotate(110deg);
+  }
+  40% {
+    transform: rotate(130deg);
+  }
+  60% {
+    transform: rotate(110deg);
+  }
+  80% {
+    transform: rotate(100deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes wing-right-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(-40deg);
+  }
+  60% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* foot */
+.foot {
+  display: inline-block;
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(36, 30, 23);
+  border-radius: 50px 50px 0 0;
+}
+
+.foot.left {
+  bottom: -5%;
+  left: 20%;
+}
+
+.foot.right {
+  bottom: -5%;
+  right: 20%;
+}
+
+.branch {
+  margin: auto;
+  width: 800px;
+  height: 50px;
+  background-color: rgb(125, 97, 60);
+  border-radius: 20px;
+  box-shadow: 0.4em 0.4em 1em 0.4em rgb(125, 97, 60);
+}
+.branch::before {
+  transform-origin: 0 0;
+  content: "";
+  display: block;
+  background-color: seagreen;
+  width: 150px;
+  height: 150px;
+  border-radius: 0 250px 0 250px;
+  position: relative;
+  left: 95%;
+  animation: leaf 3s ease infinite;
+}
+
+@keyframes leaf {
+  20% {
+    transform: rotate(-30deg) scale(0.7);
+  }
+  40% {
+    transform: rotate(30deg) scale(1.3);
+  }
+}
+
+h1,
+p {
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 40px;
+}
